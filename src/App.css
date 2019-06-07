@@ -1,0 +1,110 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 600px;
+  min-height: 600px;
+  border: 1px solid black;
+  padding: 40px;
+  margin: 20px auto 0;
+}
+
+/* */
+.user-add {
+  width: 250px;
+  min-height: 200px;
+  /* border: 1px solid red; */
+}
+
+.user-add label {
+  /* border: 1px solid red; */
+  width: 250px;
+  min-height: 30px;
+  display: flex;
+  margin: 5px 0;
+  flex-direction: column;
+}
+
+.user-add label > span {
+  width: 80px;
+  height: 30px;
+  /* border: 1px solid green; */
+}
+
+.user-add label > input {
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid rgb(157, 157, 241);
+  margin-bottom: 5px;
+}
+
+input[type='submit'] {
+  background-color: rgb(79, 140, 168);
+  width: 120px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #fefefe;
+  border: none;
+  outline: none;
+  margin: 10px 0 20px;
+  cursor: pointer;
+  transition: .3s all;
+}
+
+input[type='submit']:hover,
+input[type='submit']:focus {
+  background-color: rgb(97, 161, 190);
+}
+input[type='submit']:active {
+  transform: scale(.9);
+}
+
+/* */
+.user-container {
+  width: 520px;
+  min-height: 50px;
+  border: 1px solid rgb(108, 184, 219);
+  margin-top: 25px;
+}
+
+.user-list__header {
+  width: 480px;
+  height: 34px;
+  background-color: rgb(108, 184, 219);
+  margin: 12px auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-list__header > div {
+  width: 160px;
+  padding-left: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eee;
+}
+
+.user-list {
+  width: 480px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.user-list > li {
+  width: 480px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgb(108, 184, 219);
+}
+
+.user-list > li > span {
+  width: 160px;
+  padding: 3px 0 3px 10px;
+  display: inline-block;
+}
