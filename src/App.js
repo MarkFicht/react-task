@@ -41,16 +41,45 @@ class AddUser extends Component {
 
   state = {
     nick: 'Test1',
-    nickValidation: true,
+    nickValidation: false,
     email: 'test@gmail.com',
-    emailValidation: true,
+    emailValidation: false,
     ipAdress: '127.255.255.255',
-    ipAdressValidation: true
+    ipAdressValidation: false
   }
 
-  handleNick = e => this.setState({ nick: e.target.value }) 
-  handleEmail = e => this.setState({ email: e.target.value })
-  handleIpAdress = e => this.setState({ ipAdress: e.target.value }) 
+  handleNick = e => {
+    let lengthNick = e.target.value.length
+    this.setState({ nick: e.target.value })
+
+    if (lengthNick < 3) {
+      this.setState({ nickValidation: false })
+    } else {
+      this.setState({ nickValidation: true })
+    }
+  } 
+
+  handleEmail = e => {
+    let lengthEmail = e.target.value.length
+    this.setState({ email: e.target.value })
+
+    if (lengthEmail < 3) {
+      this.setState({ emailValidation: false })
+    } else {
+      this.setState({ emailValidation: true })
+    }
+  } 
+
+  handleIpAdress = e => {
+    let lengthAdress = e.target.value.length
+    this.setState({ ipAdress: e.target.value })
+
+    if (lengthAdress < 3) {
+      this.setState({ ipAdressValidation: false })
+    } else {
+      this.setState({ ipAdressValidation: true })
+    }
+  } 
 
   handleSubmit = e => {
     const { _getUser } = this.props
@@ -63,7 +92,10 @@ class AddUser extends Component {
       this.setState({
         nick: '',
         email: '',
-        ipAdress: ''
+        ipAdress: '',
+        nickValidation: false,
+        emailValidation: false,
+        ipAdressValidation: false
       })
     }
     e.preventDefault()
